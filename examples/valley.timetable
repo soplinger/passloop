@@ -1,0 +1,23 @@
+# Valley Branch, weekday working timetable (example)
+line Valley Branch
+clearance 2      # minutes a block or track must be clear between occupations
+headway 5        # minimum minutes between same-direction trains entering a block
+dwell 2          # default stop time at intermediate stations
+
+station Alpha
+station Beta loop
+station Gamma
+station Delta loop
+station Epsilon
+
+section Alpha Beta 12.0 80
+section Beta Gamma 8.5
+section Gamma Delta 10 60
+section Delta Epsilon 6.2 70
+
+train 1A up 06:00 speed=90
+train 1B down 06:04 speed=80
+train 2A up 06:20 speed=75 dwell=3
+train 2B down 06:22 speed=80 loop=Delta
+train 3A up 06:40
+train 3B down 06:46 loop=Beta
